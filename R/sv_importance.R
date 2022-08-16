@@ -83,7 +83,7 @@ sv_importance.shapviz <- function(object, kind = c("bar", "beeswarm", "both", "n
   if (kind == "no") {
     return(imp)
   }
-  X_scaled[] <- apply(data.matrix(X), 2L, FUN = .min_max_scale, simplify = FALSE)
+  X_scaled[] <- apply(data.matrix(X), 2L, FUN = .min_max_scale)
 
   # Collapse unimportant features (here, it is important that 'imp' is sorted)
   ok <- utils::head(names(imp), max_display - 1L)
